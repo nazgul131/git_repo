@@ -3,5 +3,8 @@
         <groupid>org.helloworld.myproject</groupid>
         <artifactid>myproject</artifactid>
         <version>1.2</version>
+=======
+        <version>1.0</version>
+>>>>>>> slave
     </dependency>
 </dependiencies>
