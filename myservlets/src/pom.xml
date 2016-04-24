@@ -1,7 +1,0 @@
-<dependiencies>
-    <dependency>
-        <groupid>org.helloworld.myproject</groupid>
-        <artifactid>myproject</artifactid>
-        <version>1.0</version>
-    </dependency>
-</dependiencies>
