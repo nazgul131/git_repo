@@ -8,12 +8,14 @@ import java.util.Date;
 /**
  * Created by Admin on 26.04.2016.
  */
-public class DateHelper {
+public final class DateHelper {
 
     public static Date getTime()
     {
-        Calendar cal = Calendar.getInstance();
-        return cal.getTime();
+        //Calendar cal = Calendar.getInstance();
+        //return cal.getTime();
+
+        return new Date();
     }
 
     public static String getTime(String format)
@@ -41,6 +43,6 @@ public class DateHelper {
     public static String format(Date date, String format)
     {
         DateFormat df = new SimpleDateFormat(format);
-        return  df.format(date);
+        return df.format(date);
     }
 }

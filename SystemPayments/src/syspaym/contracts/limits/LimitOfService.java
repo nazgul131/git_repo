@@ -3,75 +3,46 @@ package syspaym.contracts.limits;
 import syspaym.contracts.Payment;
 import syspaym.contracts.Service;
 import syspaym.utils.DateHelper;
-import syspaym.utils.Stat;
 import syspaym.utils.Time;
-
-import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Admin on 26.04.2016.
  */
-public class LimitOfService extends Limit implements ILimit
-{
+public final class LimitOfService extends Limit implements ILimit {
     private Service _service;
 
-    public LimitOfService(    String description
-                            , Float maxSumOfPayment
-                            , Time beginTime, Time endTime
-                            , Service service)
-    {
+    public LimitOfService(String description
+            , Double maxSumOfPayment
+            , Time beginTime, Time endTime
+            , Service service) {
         super(description, maxSumOfPayment, beginTime, endTime);
 
         _service = service;
     }
 
-    public LimitOfService(    String description
-                            , Float maxSumOfPayment
-                            , Long interval
-                            , Service service)
-    {
-        super(description, maxSumOfPayment, null, null, null, interval);
+    public LimitOfService(String description
+            , Double maxSumOfPayment
+            , Long interval
+            , Service service) {
+        super(description, maxSumOfPayment, interval);
 
         _service = service;
+    }
+
+    private boolean validateSum(Payment payment) {
+        return (payment.Sum <= getMaxSum());
     }
 
     @Override
     public boolean checkPayment(Payment payment) {
         if (_service == null || _service == payment.Service) {
             if (getInterval() == 0) {
-                if (payment.DateTime.compareTo(getBeginTime()) >= 0 & payment.DateTime.compareTo(getEndTime()) <= 0) {
+                if (Time.checkDateIncludedToInterval(payment.DateTime, _beginTime, _endTime) || // если задан период времени, например с 9:00 до 18:00, или с 23:00 до 9:00
+                        (DateHelper.getTime().getTime() - _lastResetStat.getTime()) <= getInterval()) // если задан интервал, например 1 час (= 3600000 в формате Long(в миллисекундах))
                     if (payment.Sum > getMaxSum())
                         return false;
-                }
-            } else {
-                if ((new Date().getTime() - _lastResetStat.getTime()) > getInterval()) {
-                    resetStat();
-                } else{
-                    Long key;
-                    if(_service == null) {
-                        key = payment.Service.Id;
-                    } else key = _service.Id;
 
-                    if(key != null) {
-                        Stat stat;
-                        if (!_stat.containsKey(key)) {
-                            stat = new Stat();
-
-                            _stat.put(key, stat);
-                        } else stat = _stat.get(key);
-
-                        // ???
-                        if(stat != null) {
-                            if ((stat.SumOfPayments + payment.Sum) > getMaxSum())
-                                return false;
-                        }
-
-                        stat.SumOfPayments = payment.Sum;
-                    }
-                }
             }
         }
 
@@ -84,7 +55,7 @@ public class LimitOfService extends Limit implements ILimit
     }
 
     @Override
-    public Float getMaxSum() {
+    public Double getMaxSum() {
         return _maxSumOfPayment;
     }
 
@@ -116,6 +87,5 @@ public class LimitOfService extends Limit implements ILimit
     @Override
     public void resetStat() {
         _lastResetStat = DateHelper.getTime();
-        _stat.clear();
     }
 }

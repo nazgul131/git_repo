@@ -14,9 +14,16 @@ public class Client
     // по идее надо делать еще класс User, но для примитивной системы и так сойдет
     public String Login;
     public Integer PsswHash;
+    public boolean IsAuthorized;
 
-    public Client(String name)
+    public Client(String name, String login, String pssw)
     {
         Name = name;
+        Login = login;
+        PsswHash = pssw.hashCode();
+
+        Accounts = new ArrayList<Account>();
+
+        IsAuthorized = false;
     }
 }

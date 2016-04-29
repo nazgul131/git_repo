@@ -11,7 +11,7 @@ public class Payment
     public Date DateTime;
     public Account Account;
     public Service Service;
-    public Float Sum;
+    public Double Sum;
     public EStatesPayment State;
     public String Description;
 }

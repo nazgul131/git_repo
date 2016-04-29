@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>${message}</p>
+    <form action="/auth" method="post">
+        <input type="text" name="login" value="Login" onclick="if(this.value=='Login')this.value='';" onblur="if(this.value=='')this.value='Login';"/><br/>
+        <input type="password" name="password" value="Password" onclick="this.value='';" onblur="if(this.value=='')this.value='Password';"/><br/><br/>
+        <input type="submit" />
+    </form>
+</body>
+</html>

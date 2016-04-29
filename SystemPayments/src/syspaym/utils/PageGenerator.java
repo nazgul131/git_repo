@@ -4,18 +4,30 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.Map;
 
-/**
- * @author v.chibrikov
- */
 public class PageGenerator {
     private static final String HTML_DIR = "public_html/templates";
     private static final Configuration CFG = new Configuration();
+
+    public static String getPage(String filename) {
+        Writer stream = new StringWriter();
+        try {
+            Reader r = new FileReader(HTML_DIR + File.separator + filename);
+            char[] buf = new char[1024];
+            while(r.read(buf) != -1)
+            {
+                stream.write(buf);
+            }
+
+            r.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return stream.toString();
+    }
 
     public static String getPage(String filename, Map<String, Object> data) {
         Writer stream = new StringWriter();
@@ -25,6 +37,7 @@ public class PageGenerator {
         } catch (IOException | TemplateException e) {
             e.printStackTrace();
         }
+
         return stream.toString();
     }
 }

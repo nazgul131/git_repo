@@ -1,13 +1,8 @@
 package syspaym.contracts.limits;
 
-import syspaym.contracts.Service;
 import syspaym.utils.DateHelper;
-import syspaym.utils.Stat;
 import syspaym.utils.Time;
-
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Admin on 26.04.2016.
@@ -15,17 +10,15 @@ import java.util.Map;
 public abstract class Limit
 {
     protected String _description;
-    protected Float _maxSumOfPayment;
+    protected Double _maxSumOfPayment;
     protected Integer _maxNumberOfPayment;
     protected Time _beginTime;
     protected Time _endTime;
     protected Long _interval;
     protected Date _lastResetStat;
-    protected Map<Long, Stat> _stat;
 
     public Limit(){
         _lastResetStat = DateHelper.getTime();
-        _stat = new HashMap<Long, Stat>();
     }
 
     public Limit(String description)
@@ -36,14 +29,14 @@ public abstract class Limit
     }
 
     public Limit(  String description
-                 , Float maxSumOfPayment) {
+                 , Double maxSumOfPayment) {
         this(description);
 
         _maxSumOfPayment = maxSumOfPayment;
     }
 
     public Limit(  String description
-                 , Float maxSumOfPayment, Integer maxNumberOfPayment) {
+                 , Double maxSumOfPayment, Integer maxNumberOfPayment) {
 
         this(description, maxSumOfPayment);
 
@@ -51,7 +44,7 @@ public abstract class Limit
     }
 
     public Limit(  String description
-                 , Float maxSumOfPayment
+                 , Double maxSumOfPayment
                  , Time beginTime, Time endTime) {
         this(description, maxSumOfPayment);
 
@@ -59,8 +52,16 @@ public abstract class Limit
         _endTime = endTime;
     }
 
+    public Limit(   String description
+                  , Double maxSumOfPayment
+                  , Long interval) {
+        this(description, maxSumOfPayment);
+
+        _interval = interval;
+    }
+
     public Limit(  String description
-                 , Float maxSumOfPayment, Integer maxNumberOfPayment
+                 , Double maxSumOfPayment, Integer maxNumberOfPayment
                  , Time beginTime, Time endTime) {
         this(description, maxSumOfPayment, maxNumberOfPayment);
 
@@ -69,23 +70,21 @@ public abstract class Limit
     }
 
     public Limit(  String description
-                 , Float maxSumOfPayment, Integer maxNumberOfPayment
-                 , Time beginTime, Time endTime
+                 , Double maxSumOfPayment, Integer maxNumberOfPayment
                  , Long interval) {
-        this(description, maxSumOfPayment, maxNumberOfPayment, beginTime, endTime);
+        this(description, maxSumOfPayment, maxNumberOfPayment);
 
         _interval = interval;
     }
 
     public abstract String getDescription();
-    public abstract Float getMaxSum();
+    public abstract Double getMaxSum();
     public abstract Integer getMaxNumber();
     public abstract Date getBeginTime();
     public abstract Date getEndTime();
     public abstract Long getInterval();
     public abstract Date getLastResetStat();
     public abstract void resetStat();
-
 
    // public static Limit CreateLimit()
 }

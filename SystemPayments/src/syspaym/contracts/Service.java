@@ -11,5 +11,9 @@ public class Service
 {
     public Long Id;
     public String Name;
-    public ArrayList<ILimit> Limits;
+
+    public Service(String name)
+    {
+        Name = name;
+    }
 }

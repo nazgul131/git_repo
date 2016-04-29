@@ -10,17 +10,17 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Map;
+import java.util.*;
 
+import sun.util.resources.CalendarData_th;
+import syspaym.contracts.Account;
 import syspaym.contracts.Client;
 import syspaym.contracts.limits.ILimit;
 import syspaym.contracts.Payment;
 import syspaym.contracts.Service;
 import syspaym.servlets.*;
 import syspaym.utils.DateHelper;
+import syspaym.utils.Sequence;
 import syspaym.utils.Time;
 
 /**
@@ -31,23 +31,20 @@ public class Main
     public static void main(String[] args) throws Exception {
         ArrayDeque<Payment> queuePayments = new ArrayDeque<Payment>();
         ArrayList<Payment> historyPayments = new ArrayList<Payment>();
+
+        Map<String, Client> clients = new HashMap<String, Client>();
         ArrayList<Service> services = new ArrayList<Service>();
+
         ArrayList<ILimit> limits = new ArrayList<ILimit>();
+
+        createTestData(clients, services);
 
         PaymentsHandler ph = new PaymentsHandler(queuePayments, historyPayments, limits);
         Thread phThread = new Thread(ph);
         phThread.start();
 
-        //Map<String, Client> clients = new Map<String, Client>();
-        //createTestClients(clients);
-
-        //System.out.println(DateHelper.getTime("HH:mm:ss"));
-        Time t1 = new Time(10, 59);
-        Time t2 = new Time(12, 15);
-        System.out.println(t1.compareTo(t2).toString());
-
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.addServlet(new ServletHolder(new AuthServlet()), "/auth");
+        context.addServlet(new ServletHolder(new AuthServlet(clients)), "/auth");
         context.addServlet(new ServletHolder(new AccountsServlet()), "/accounts");
         context.addServlet(new ServletHolder(new LimitsServlet()), "/limits");
         context.addServlet(new ServletHolder(new PaymentsServlet(queuePayments)), "/payments");
@@ -66,18 +63,39 @@ public class Main
         server.join();
     }
 
-    private static void createTestClients(Map<String, Client> clients)
+    /*
+    Создание локальных объектов для тестов
+     */
+    private static void createTestData(Map<String, Client> clients, ArrayList<Service> services)
     {
-        Client client1 = new Client("test1");
-        client1.Login = "test1";
-        client1.PsswHash = "test1".hashCode();
-        //client1.Accounts.add()
+        Random r = new Random();
 
-        clients.put(client1.Login, client1);
+        for(int i = 0; i < 4; i++) {
 
-        Client client2 = new Client("test2");
-        client1.Login = "test2";
-        client1.PsswHash = "test2".hashCode();
-        clients.put(client2.Login, client1);
+            // добавление нового клиента
+            Long id = Sequence.getNextId();
+            String name = "test"+id.toString();
+
+            Client client = new Client(name, name, name);
+            client.Id = id;
+
+            Account acc = new Account("4081781000000000000"+id.toString(), client);
+            acc.kt(r.nextDouble()*1000);
+            client.Accounts.add(acc);
+            acc = new Account("4081781000000000001"+id.toString(), client);
+            acc.kt(r.nextDouble()*100);
+            client.Accounts.add(acc);
+            acc = new Account("4081781000000000002"+id.toString(), client);
+            acc.kt(r.nextDouble()*1000);
+            client.Accounts.add(acc);
+
+            clients.put(client.Login, client);
+
+            name = "service_"+name;
+            Service service = new Service(name);
+            service.Id = Sequence.getNextId();
+
+            services.add(service);
+        }
     }
 }

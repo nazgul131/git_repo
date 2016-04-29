@@ -25,7 +25,9 @@ public class Time {
     public Integer getMinutes() {return _minutes;}
 
     /*
-    * Метод возвращает
+    * Метод возвращает разницу (время в формате Double: целая часть = часы, десятичная = минуты)
+    * между этим временем и временем указанным в параметре.
+    * Если 0, то времена равны, если < 0, то это время меньше узказанного в параметре и наоборот.
      */
     public Double compareTo(Time anotherTime) {
         int hours = ((_hours == 0) ? 24 : _hours) - ((anotherTime.getHours() == 0) ? 24 : anotherTime.getHours());
@@ -56,20 +58,38 @@ public class Time {
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
 
-        if(cal.getTime().compareTo(new Date()) > 0)
-            cal.add(Calendar.DAY_OF_YEAR, -1);
-
         return cal.getTime();
     }
 
-    public Float toFloat()
+    public Double toDouble()
     {
-        return (Float)(_hours+(_minutes*0.01F));
+        return (Double)(_hours + (_minutes*0.01D));
     }
 
     @Override
     public String toString()
     {
         return _hours.toString()+":"+_minutes.toString();
+    }
+
+    public static boolean checkDateIncludedToInterval(Date date, Time timeStart, Time timeEnd)
+    {
+        if(date == null || timeStart == null || timeEnd == null)
+            return false;
+
+        Double timeDiff = timeStart.compareTo(timeEnd);
+
+        // ночь
+        if(timeDiff >= 0){
+            if (date.compareTo(timeStart.toDate()) <= 0 & date.compareTo(timeEnd.toDate()) >= 0)
+                return true;
+        }
+        //день
+        else /*if (timeDiff < 0)*/{
+            if (date.compareTo(timeStart.toDate()) >= 0 & date.compareTo(timeEnd.toDate()) <= 0)
+                return true;
+        }
+
+        return false;
     }
 }

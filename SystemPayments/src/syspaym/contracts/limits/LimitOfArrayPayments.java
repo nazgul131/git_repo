@@ -1,10 +1,10 @@
 package syspaym.contracts.limits;
-
 import syspaym.contracts.Payment;
 import syspaym.contracts.Service;
 import syspaym.utils.DateHelper;
 import syspaym.utils.Stat;
 import syspaym.utils.Time;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,31 +12,36 @@ import java.util.Map;
 /**
  * Created by Admin on 26.04.2016.
  */
-public final class LimitOfDublicates extends Limit implements ILimit
+public final class LimitOfArrayPayments extends Limit implements ILimit
 {
     private Service _service;
     private Map<String, Stat> _stat;
+    private boolean _isPaymentsToOneClient;
 
-    public LimitOfDublicates(    String description
-            , Double maxSumOfPayments
+    public LimitOfArrayPayments(String description
+            , Double maxSumOfPayments, Integer maxNumberOfPayments
             , Time beginTime, Time endTime
-            , Service service)
+            , Service service
+            , boolean isPaymentsToOneClient)
     {
-        super(description, maxSumOfPayments, beginTime, endTime);
+        super(description, maxSumOfPayments, maxNumberOfPayments, beginTime, endTime);
 
         _service = service;
         _stat = new HashMap<String, Stat>();
+        _isPaymentsToOneClient = isPaymentsToOneClient;
     }
 
-    public LimitOfDublicates(    String description
-            , Double maxSumOfPayments
+    public LimitOfArrayPayments(String description
+            , Double maxSumOfPayments, Integer maxNumberOfPayments
             , Long interval
-            , Service service)
+            , Service service
+            , boolean isPaymentsToOneClient)
     {
-        super(description, maxSumOfPayments, interval);
+        super(description, maxSumOfPayments, maxNumberOfPayments, interval);
 
         _service = service;
         _stat = new HashMap<String, Stat>();
+        _isPaymentsToOneClient = isPaymentsToOneClient;
     }
 
     @Override
@@ -51,9 +56,13 @@ public final class LimitOfDublicates extends Limit implements ILimit
 
             if (isDateIncludedToInterval || ((currentTime.getTime() - _lastResetStat.getTime()) <= getInterval())) {
                 String key;
-                if (_service == null) {
-                    key = payment.Service.Id.toString() + payment.Account.Owner.Id.toString();
-                } else key = _service.Id.toString() + payment.Account.Owner.Id.toString();
+                if(_isPaymentsToOneClient){
+                    key = payment.Account.Owner.Id.toString(); // в пользу одного клиента
+                } else {
+                    if (_service == null) {
+                        key = "all"; // по всем услугам
+                    } else key = _service.Id.toString(); // по конкретной услуге
+                }
 
                 if (key != null) {
                     Stat stat;
@@ -66,15 +75,13 @@ public final class LimitOfDublicates extends Limit implements ILimit
                         stat.SumOfPayments += payment.Sum;
                         stat.NumberOfPayments++;
 
-                        if(stat.NumberOfPayments > 1) {
-                            // ограничение по сумме
-                            if (payment.Sum > getMaxSum())
-                                return false;
+                        // ограничение по совокупности сумм
+                        if (stat.SumOfPayments > getMaxSum())
+                            return false;
 
-                            // ограничение по количеству платежей
-                            if (stat.NumberOfPayments > getMaxNumber())
-                                return false;
-                        }
+                        // ограничение по количеству платежей
+                        if (stat.NumberOfPayments > getMaxNumber())
+                            return false;
                     }
                 }
             }
@@ -110,7 +117,7 @@ public final class LimitOfDublicates extends Limit implements ILimit
 
     @Override
     public Long getInterval() {
-        return (_interval == null) ? 0L : _interval;
+        return _interval;
     }
 
     @Override

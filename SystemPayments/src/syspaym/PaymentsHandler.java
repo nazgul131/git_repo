@@ -31,6 +31,8 @@ public class PaymentsHandler implements Runnable
      Метод обрабатывает платежи, в соответствии с переданными лимитами.
      */
     public void startHandle() throws InterruptedException {
+        _isWork = true;
+
         while(_isWork)
         {
             Payment payment = _queuePayments.pollFirst();
