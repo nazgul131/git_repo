@@ -7,23 +7,30 @@ public class Account
 {
     public Long Id;
     public Client Owner;
+    public String Name;
     public String Number;
-    public Double Rest;
+    private Double _rest;
 
     public Account(String number, Client owner)
     {
+        Name = "Текущий счет "+owner.Name;
         Number = number;
         Owner = owner;
-        Rest = 0D;
+        _rest = 0D;
+    }
+
+    public Double getRest()
+    {
+        return _rest;
     }
 
     public void kt(Double sum)
     {
-        Rest += sum;
+        _rest += sum;
     }
 
     public void dt(Double sum)
     {
-        Rest -= sum;
+        _rest -= sum;
     }
 }

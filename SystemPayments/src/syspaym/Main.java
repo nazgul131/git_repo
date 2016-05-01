@@ -32,7 +32,8 @@ public class Main
         ArrayDeque<Payment> queuePayments = new ArrayDeque<Payment>();
         ArrayList<Payment> historyPayments = new ArrayList<Payment>();
 
-        Map<String, Client> clients = new HashMap<String, Client>();
+        Map<String, Client> clients = new HashMap<String, Client>(); // ключ в данном случае = логину клиента
+        Map<String, Client> sessions = new HashMap<String, Client>();; // ключ в данном случае = ID сессии
         ArrayList<Service> services = new ArrayList<Service>();
 
         ArrayList<ILimit> limits = new ArrayList<ILimit>();
@@ -44,13 +45,14 @@ public class Main
         phThread.start();
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.addServlet(new ServletHolder(new AuthServlet(clients)), "/auth");
-        context.addServlet(new ServletHolder(new AccountsServlet()), "/accounts");
+        context.addServlet(new ServletHolder(new AuthServlet(clients, sessions)), "/auth");
+        context.addServlet(new ServletHolder(new ProfileServlet(sessions)), "/profile");
+        context.addServlet(new ServletHolder(new AccountsServlet(sessions)), "/accounts");
+        context.addServlet(new ServletHolder(new PaymentsServlet(queuePayments, historyPayments, sessions)), "/payments");
         context.addServlet(new ServletHolder(new LimitsServlet()), "/limits");
-        context.addServlet(new ServletHolder(new PaymentsServlet(queuePayments)), "/payments");
 
         ResourceHandler resource_handler = new ResourceHandler();
-        resource_handler.setDirectoriesListed(true);
+        resource_handler.setDirectoriesListed(false);
         resource_handler.setResourceBase("public_html");
 
         HandlerList handlers = new HandlerList();
@@ -70,13 +72,19 @@ public class Main
     {
         Random r = new Random();
 
+        Client client = new Client("Admin", "admin", "1");
+        client.Id = 0L;
+        client.IsAdmin = true;
+
+        clients.put(client.Login, client);
+
         for(int i = 0; i < 4; i++) {
 
             // добавление нового клиента
             Long id = Sequence.getNextId();
             String name = "test"+id.toString();
 
-            Client client = new Client(name, name, name);
+            client = new Client(name, name, name);
             client.Id = id;
 
             Account acc = new Account("4081781000000000000"+id.toString(), client);

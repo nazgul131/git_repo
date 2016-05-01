@@ -20,39 +20,65 @@ import java.util.Map;
 public class AuthServlet extends HttpServlet
 {
     private Map<String, Client> _clients;
+    private Map<String, Client> _sessions;
 
-    public AuthServlet(Map<String, Client> clients)
+    public AuthServlet(Map<String, Client> clients, Map<String, Client> sessions)
     {
         _clients = clients;
+        _sessions = sessions;
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        //Map<String, Object> pageVariables = new HashMap<>();
-        //pageVariables.put("testString", "Test success!");
+        response.setCharacterEncoding("windows-1251");
 
-        response.getWriter().println(PageGenerator.getPage("auth.html"));
+        String sessionId = request.getSession().getId();
+
+        if(_sessions.containsKey(sessionId)) {
+            if(request.getParameter("exit").compareTo("1")==0){
+                _sessions.remove(sessionId);
+                response.sendRedirect("/auth");
+            }
+            else response.sendRedirect("/profile");
+        }
+        else {
+            Map<String, Object> pageVariables = new HashMap<>();
+            pageVariables.put("message", "");
+
+            response.getWriter().println(PageGenerator.getPage("auth.html", pageVariables));
+        }
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        Map<String, Object> pageVariables = new HashMap<>();
+        response.setCharacterEncoding("windows-1251");
+
         boolean isSuccess = false;
+        String sessionId = request.getSession().getId();
+
+        Map<String, Object> pageVariables = new HashMap<>();
 
         String login = request.getParameter("login");
         Integer pssw = request.getParameter("password").hashCode();
 
+        response.setStatus(HttpServletResponse.SC_OK);
+
         Client client = _clients.get(login);
         if (client != null) {
-            if(client.IsAuthorized) {
+            if(client.IsOnline) {
                 pageVariables.put("message", "Already authorized!");
             }
 
             if (client.PsswHash.equals(pssw)) {
+                if(_sessions.containsKey(sessionId))
+                    _sessions.remove(sessionId);
+
+                _sessions.put(sessionId, client);
+
                 isSuccess = true;
-                client.IsAuthorized = true;
-                pageVariables.put("message", "Success!");
-                response.sendRedirect("index.html");
+                client.IsOnline = true;
+
+                response.sendRedirect("/profile");
             }else pageVariables.put("message", "Wrong login or password!");
         }else pageVariables.put("message", "Wrong login or password!");
 
