@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="/style.css" />
+    <meta charset="UTF-8">
+    <title>SystemPayments: ${title}</title>
+</head>
+<body>
+    ${panel}
+
+    <div class="control">
+        <form action="/limits?action=${action}" method="post">
+            <input type="radio" name="limitType" value="Limit of amount payments">
+            <input type="radio" name="limitType" value="Limit of similar payments">
+            <input type="radio" name="limitType" value="Limit of sum payments">
+
+            <label for="description">Description:</label>
+            <input id="description" name="description" type="text" class="textbox" value="${description}"/>
+            <br/>
+
+            <label for="beginTime">Begin time:</label>
+            <input id="beginTime" name="beginTime" type="time" value="${beginTime}"/>
+            <br/>
+
+            <label for="endTime">End time:</label>
+            <input id="endTime" name="endTime" type="time" value="${endTime}"/>
+            <br/>
+
+            <label for="interval">Interval:</label>
+            <input id="interval" name="interval" class="textbox" type="number" value="${interval}"/>&nbsp milliseconds
+            <br/>
+
+            <label for="maxSum">Max sum:</label>
+            <input id="maxSum" name="maxSum" class="textbox" type="number" value="${maxSum}"/>
+            <br/>
+
+            <label for="maxNumber">Max number:</label>
+            <input id="maxNumber" name="maxNumber" class="textbox" type="number" value="${maxNumber}"/>
+            <br/>
+
+            <label for="services_list">Service:</label>
+            ${services_list}
+            <br/>
+            <br/>
+
+            <input type="submit" value="${button}" />
+        </form>
+    </div>
+</body>
+</html>

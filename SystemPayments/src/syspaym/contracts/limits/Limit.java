@@ -1,6 +1,8 @@
 package syspaym.contracts.limits;
 
+import syspaym.contracts.Service;
 import syspaym.utils.DateHelper;
+import syspaym.utils.Sequence;
 import syspaym.utils.Time;
 import java.util.Date;
 
@@ -9,15 +11,21 @@ import java.util.Date;
  */
 public abstract class Limit
 {
+    public Long Id;
+
     protected String _description;
-    protected Double _maxSumOfPayment;
-    protected Integer _maxNumberOfPayment;
     protected Time _beginTime;
     protected Time _endTime;
     protected Long _interval;
+    protected Double _maxSumOfPayment;
+    protected Integer _maxNumberOfPayment;
+    protected Service _service;
+
     protected Date _lastResetStat;
 
     public Limit(){
+        Id = Sequence.getNextId();
+
         _lastResetStat = DateHelper.getTime();
     }
 
@@ -77,14 +85,27 @@ public abstract class Limit
         _interval = interval;
     }
 
+    public Long getServiceId(){
+        if(_service != null)
+            return _service.Id;
+
+        return -1L;
+    }
+
+    public String getServiceName(){
+        if(_service != null)
+            return _service.Name;
+
+        return null;
+    }
+
     public abstract String getDescription();
-    public abstract Double getMaxSum();
-    public abstract Integer getMaxNumber();
     public abstract Date getBeginTime();
     public abstract Date getEndTime();
     public abstract Long getInterval();
+    public abstract Double getMaxSum();
+    public abstract Integer getMaxNumber();
+
     public abstract Date getLastResetStat();
     public abstract void resetStat();
-
-   // public static Limit CreateLimit()
 }

@@ -42,7 +42,7 @@ public class PaymentsHandler implements Runnable
                 _historyPayments.add(payment);
             }
 
-            Thread.sleep(300);
+            Thread.sleep(3000); // искусственное замедление обработки
         }
     }
 

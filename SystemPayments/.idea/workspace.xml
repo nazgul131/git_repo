@@ -2,26 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e08aeb16-ca01-4d8b-941e-d7189094cbe6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/Style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/templates/accounts.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/templates/new_payment.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/templates/payments.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/syspaym/servlets/ProfileServlet.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public_html/templates/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/syspaym/servlets/PaymentsServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/syspaym/utils/PageGenerator.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/templates/edit_limit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/templates/limits.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/Main.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/PaymentsHandler.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/PaymentsHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/contracts/Account.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/contracts/Account.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/contracts/Client.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/contracts/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/contracts/Payment.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/contracts/Payment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/ILimit.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/ILimit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/Limit.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/Limit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/LimitOfArrayPayments.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/LimitOfArrayPayments.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/LimitOfDublicates.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/LimitOfDublicates.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/LimitOfService.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/contracts/limits/LimitOfService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/servlets/AccountsServlet.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/servlets/AccountsServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/servlets/AuthServlet.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/servlets/AuthServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/servlets/LimitsServlet.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/servlets/LimitsServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/servlets/PaymentsServlet.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/servlets/PaymentsServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/utils/PageGenerator$1.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/utils/PageGenerator$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/syspaym/utils/PageGenerator.class" afterPath="$PROJECT_DIR$/target/classes/syspaym/utils/PageGenerator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/Style.css" afterPath="$PROJECT_DIR$/public_html/Style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/auth.html" afterPath="$PROJECT_DIR$/public_html/templates/auth.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/templates/new_payment.html" afterPath="$PROJECT_DIR$/public_html/templates/new_payment.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/Main.java" afterPath="$PROJECT_DIR$/src/syspaym/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/PaymentsHandler.java" afterPath="$PROJECT_DIR$/src/syspaym/PaymentsHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/contracts/Account.java" afterPath="$PROJECT_DIR$/src/syspaym/contracts/Account.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/contracts/Client.java" afterPath="$PROJECT_DIR$/src/syspaym/contracts/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/servlets/AccountsServlet.java" afterPath="$PROJECT_DIR$/src/syspaym/servlets/AccountsServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/contracts/Payment.java" afterPath="$PROJECT_DIR$/src/syspaym/contracts/Payment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/contracts/limits/ILimit.java" afterPath="$PROJECT_DIR$/src/syspaym/contracts/limits/ILimit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/contracts/limits/Limit.java" afterPath="$PROJECT_DIR$/src/syspaym/contracts/limits/Limit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfArrayPayments.java" afterPath="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfArrayPayments.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfDublicates.java" afterPath="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfDublicates.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfService.java" afterPath="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/servlets/AuthServlet.java" afterPath="$PROJECT_DIR$/src/syspaym/servlets/AuthServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/servlets/LimitsServlet.java" afterPath="$PROJECT_DIR$/src/syspaym/servlets/LimitsServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/servlets/PaymentsServlet.java" afterPath="$PROJECT_DIR$/src/syspaym/servlets/PaymentsServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/syspaym/utils/PageGenerator.java" afterPath="$PROJECT_DIR$/src/syspaym/utils/PageGenerator.java" />
     </list>
@@ -50,48 +64,70 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/syspaym/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="50" column="96" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
+            <state relative-caret-position="510">
+              <caret line="51" column="89" selection-start-line="51" selection-start-column="89" selection-end-line="51" selection-end-column="89" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/style.css">
+      <file leaf-file-name="LimitsServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/LimitsServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+            <state relative-caret-position="1037">
+              <caret line="77" column="75" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaymentsServlet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/PaymentsServlet.java">
+      <file leaf-file-name="LimitOfService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+            <state relative-caret-position="578">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_payment.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/templates/new_payment.html">
+      <file leaf-file-name="LimitOfDublicates.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfDublicates.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+            <state relative-caret-position="697">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payments.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/templates/payments.html">
+      <file leaf-file-name="LimitOfArrayPayments.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfArrayPayments.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+            <state relative-caret-position="782">
+              <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Limit.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/Limit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1785">
+              <caret line="109" column="37" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit_limit.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public_html/templates/edit_limit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -100,11 +136,21 @@
       <file leaf-file-name="PageGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/syspaym/utils/PageGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="199" column="33" selection-start-line="199" selection-start-column="33" selection-end-line="199" selection-end-column="33" />
+            <state relative-caret-position="3349">
+              <caret line="208" column="66" selection-start-line="208" selection-start-column="66" selection-end-line="208" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaymentsServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/PaymentsServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="75" column="73" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="73" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,10 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/PaymentsHandler.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Payment.java" />
-        <option value="$PROJECT_DIR$/src/Servlets/PaymentsServlet.java" />
         <option value="$PROJECT_DIR$/src/servlets/PaymentsServlet.java" />
         <option value="$PROJECT_DIR$/src/servlets/LimitsServlet.java" />
         <option value="$PROJECT_DIR$/src/servlets/AuthServlet.java" />
@@ -155,35 +197,39 @@
         <option value="$PROJECT_DIR$/src/syspaym/contracts/EStatesPayment.java" />
         <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/Stat.java" />
         <option value="$PROJECT_DIR$/src/syspaym/utils/DateHelper.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/utils/Time.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/contracts/Payment.java" />
         <option value="$PROJECT_DIR$/src/syspaym/utils/Stat.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/PaymentsHandler.java" />
         <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOf.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/ILimit.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfService.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/Limit.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfDublicates.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfArrayPayments.java" />
         <option value="$PROJECT_DIR$/src/syspaym/utils/Sequence.java" />
         <option value="$PROJECT_DIR$/src/syspaym/contracts/Service.java" />
         <option value="$PROJECT_DIR$/src/syspaym/contracts/Sessions.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/contracts/Client.java" />
         <option value="$PROJECT_DIR$/public_html/templates/index.html" />
         <option value="$PROJECT_DIR$/public_html/Style.css" />
-        <option value="$PROJECT_DIR$/public_html/templates/auth.html" />
         <option value="$PROJECT_DIR$/public_html/index.html" />
         <option value="$PROJECT_DIR$/public_html/templates/profile.html" />
-        <option value="$PROJECT_DIR$/src/syspaym/contracts/Account.java" />
         <option value="$PROJECT_DIR$/public_html/templates/accounts.html" />
-        <option value="$PROJECT_DIR$/src/syspaym/servlets/AuthServlet.java" />
         <option value="$PROJECT_DIR$/src/syspaym/servlets/ProfileServlet.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/servlets/AccountsServlet.java" />
-        <option value="$PROJECT_DIR$/src/syspaym/Main.java" />
-        <option value="$PROJECT_DIR$/public_html/style.css" />
-        <option value="$PROJECT_DIR$/src/syspaym/utils/PageGenerator.java" />
         <option value="$PROJECT_DIR$/public_html/templates/payments.html" />
+        <option value="$PROJECT_DIR$/src/syspaym/contracts/Account.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/servlets/AccountsServlet.java" />
+        <option value="$PROJECT_DIR$/public_html/templates/auth.html" />
+        <option value="$PROJECT_DIR$/src/syspaym/servlets/AuthServlet.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/contracts/Client.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/contracts/Payment.java" />
+        <option value="$PROJECT_DIR$/public_html/templates/new_payment.html" />
+        <option value="$PROJECT_DIR$/public_html/style.css" />
+        <option value="$PROJECT_DIR$/src/syspaym/PaymentsHandler.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/Main.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/ILimit.java" />
+        <option value="$PROJECT_DIR$/public_html/templates/limits.html" />
         <option value="$PROJECT_DIR$/src/syspaym/servlets/PaymentsServlet.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/utils/Time.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/utils/PageGenerator.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfService.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfDublicates.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfArrayPayments.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/servlets/LimitsServlet.java" />
+        <option value="$PROJECT_DIR$/src/syspaym/contracts/limits/Limit.java" />
+        <option value="$PROJECT_DIR$/public_html/templates/edit_limit.html" />
       </list>
     </option>
   </component>
@@ -210,7 +256,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1370" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -353,6 +399,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="syspaym" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contracts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="limits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SystemPayments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SystemPayments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public_html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -392,10 +464,8 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myProjects\JAVA\git_repo.git\SystemPayments\public_html" />
-      <recent name="D:\myProjects\JAVA\git_repo.git\SystemPayments\public_html\resources" />
-      <recent name="D:\myProjects\JAVA\git_repo.git\SystemPayments\public_html\templates" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\myProjects\JAVA\git_repo.git\SystemPayments\public_html\templates" />
@@ -405,8 +475,10 @@
       <recent name="syspaym.servlets" />
       <recent name="syspaym.contracts.limits" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\myProjects\JAVA\git_repo.git\SystemPayments\public_html" />
+      <recent name="D:\myProjects\JAVA\git_repo.git\SystemPayments\public_html\resources" />
+      <recent name="D:\myProjects\JAVA\git_repo.git\SystemPayments\public_html\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -864,41 +936,43 @@
       <workItem from="1462005189172" duration="881000" />
       <workItem from="1462019424552" duration="717000" />
       <workItem from="1462100474591" duration="11118000" />
-      <workItem from="1462118940944" duration="1218000" />
+      <workItem from="1462118940944" duration="6780000" />
+      <workItem from="1462444035278" duration="12669000" />
+      <workItem from="1462706320092" duration="590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112741000" />
+    <option name="totallyTimeSpent" value="131562000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.49694657" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2803419" sideWeight="0.5183206" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.340458" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2820513" sideWeight="0.48167938" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22748092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22163388" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3880342" sideWeight="0.49694657" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3880342" sideWeight="0.49694657" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.49694657" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2820513" sideWeight="0.48167938" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -952,8 +1026,14 @@
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/syspaym/contracts/Payment.java</url>
+          <line>16</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -962,27 +1042,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.3.0.M0/jetty-server-9.3.0.M0.jar!/org/eclipse/jetty/server/handler/ResourceHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.3.0.M0/jetty-server-9.3.0.M0.jar!/org/eclipse/jetty/server/handler/HandlerWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.3.0.M0/jetty-server-9.3.0.M0.jar!/org/eclipse/jetty/server/handler/AbstractHandlerContainer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.3.0.M0/jetty-server-9.3.0.M0.jar!/org/eclipse/jetty/server/Handler.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1039,80 +1098,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/PaymentsHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/utils/Stat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/ILimit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOf.java" />
-    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/Limit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/utils/Time.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/utils/DateHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfDublicates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfArrayPayments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/utils/Sequence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1120,24 +1106,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/LimitsServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.3.0.M0/jetty-server-9.3.0.M0.jar!/org/eclipse/jetty/server/Response.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="801" column="0" selection-start-line="801" selection-start-column="0" selection-end-line="801" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-servlet/9.3.0.M0/jetty-servlet-9.3.0.M0.jar!/org/eclipse/jetty/servlet/ServletHolder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="583" column="0" selection-start-line="583" selection-start-column="0" selection-end-line="583" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1172,13 +1144,6 @@
     <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/Sessions.java" />
     <entry file="file://$PROJECT_DIR$/public_html/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/public_html/auth.html" />
-    <entry file="file://$PROJECT_DIR$/public_html/templates/auth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1207,27 +1172,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/templates/accounts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1239,80 +1183,218 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/AuthServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="137">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/AccountsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="41" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="442">
+          <caret line="38" column="81" selection-start-line="38" selection-start-column="81" selection-end-line="38" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/AuthServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="296">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/PaymentsHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/ILimit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-servlet/9.3.0.M0/jetty-servlet-9.3.0.M0.jar!/org/eclipse/jetty/servlet/ServletHolder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="532" column="17" selection-start-line="532" selection-start-column="17" selection-end-line="532" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/payments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="63" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/limits.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/new_payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="14" column="17" selection-start-line="12" selection-start-column="12" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="485" column="21" selection-start-line="485" selection-start-column="21" selection-end-line="485" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/syspaym/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="50" column="96" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
+        <state relative-caret-position="510">
+          <caret line="51" column="89" selection-start-line="51" selection-start-column="89" selection-end-line="51" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/style.css">
+    <entry file="file://$PROJECT_DIR$/src/syspaym/utils/DateHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+        <state relative-caret-position="137">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/utils/Time.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/utils/Sequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/utils/Stat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/PaymentsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="75" column="73" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/syspaym/utils/PageGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="199" column="33" selection-start-line="199" selection-start-column="33" selection-end-line="199" selection-end-column="33" />
+        <state relative-caret-position="3349">
+          <caret line="208" column="66" selection-start-line="208" selection-start-column="66" selection-end-line="208" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/templates/new_payment.html">
+    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfDublicates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="697">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/templates/payments.html">
+    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfArrayPayments.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="782">
+          <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/PaymentsServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/LimitOfService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+        <state relative-caret-position="578">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/contracts/limits/Limit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="109" column="37" selection-start-line="109" selection-start-column="37" selection-end-line="109" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syspaym/servlets/LimitsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="77" column="75" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/templates/edit_limit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
           <folding />
         </state>
       </provider>

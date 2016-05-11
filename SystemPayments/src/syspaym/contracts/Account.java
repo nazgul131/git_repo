@@ -1,5 +1,7 @@
 package syspaym.contracts;
 
+import syspaym.utils.Sequence;
+
 /**
  * Created by Admin on 24.04.2016.
  */
@@ -13,6 +15,7 @@ public class Account
 
     public Account(String number, Client owner)
     {
+        Id = Sequence.getNextId();
         Name = "Текущий счет "+owner.Name;
         Number = number;
         Owner = owner;

@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link type="text/css" rel="stylesheet" href="/style.css" />
     <meta charset="UTF-8">
     <title>SystemPayments: Auth</title>
-    <style>
-        label{
-            clear: left;
-            float: left;
-            width: 100px;
-            font-weight: bold;
-        }
-        #message{color: red}
-    </style>
+
 </head>
 <body>
     <p id="message">${message}</p>
@@ -22,7 +15,7 @@
         <label for="password">Password:</label>
         <input id="password" type="password" name="password" value="Password" onclick="this.value='';" onblur="if(this.value=='')this.value='Password';"/><br/><br/>
 
-        <input type="submit" />
+        <input type="submit" value="Login" />
     </form>
 </body>
 </html>

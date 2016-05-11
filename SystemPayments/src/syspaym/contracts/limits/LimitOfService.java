@@ -10,7 +10,6 @@ import java.util.Date;
  * Created by Admin on 26.04.2016.
  */
 public final class LimitOfService extends Limit implements ILimit {
-    private Service _service;
 
     public LimitOfService(String description
             , Double maxSumOfPayment
@@ -30,6 +29,17 @@ public final class LimitOfService extends Limit implements ILimit {
         _service = service;
     }
 
+    public LimitOfService(String description
+            , Double maxSumOfPayment
+            , Time beginTime, Time endTime
+            , Long interval
+            , Service service) {
+        super(description, maxSumOfPayment, beginTime, endTime);
+
+        _interval = interval;
+        _service = service;
+    }
+
     private boolean validateSum(Payment payment) {
         return (payment.Sum <= getMaxSum());
     }
@@ -37,13 +47,10 @@ public final class LimitOfService extends Limit implements ILimit {
     @Override
     public boolean checkPayment(Payment payment) {
         if (_service == null || _service == payment.Service) {
-            if (getInterval() == 0) {
-                if (Time.checkDateIncludedToInterval(payment.DateTime, _beginTime, _endTime) || // если задан период времени, например с 9:00 до 18:00, или с 23:00 до 9:00
-                        (DateHelper.getTime().getTime() - _lastResetStat.getTime()) <= getInterval()) // если задан интервал, например 1 час (= 3600000 в формате Long(в миллисекундах))
+                if (Time.checkDateIncludedToInterval(payment.DateTime, _beginTime, _endTime) && // если задан период времени, например с 9:00 до 18:00, или с 23:00 до 9:00
+                        (getInterval().compareTo(0L) == 0 || DateHelper.getTime().getTime() - _lastResetStat.getTime() <= getInterval())) // если задан интервал, например 1 час (= 3600000 в формате Long(в миллисекундах))
                     if (payment.Sum > getMaxSum())
                         return false;
-
-            }
         }
 
         return true;

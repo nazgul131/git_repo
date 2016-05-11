@@ -34,7 +34,7 @@ public class Main
 
         Map<String, Client> clients = new HashMap<String, Client>(); // ключ в данном случае = логину клиента
         Map<String, Client> sessions = new HashMap<String, Client>();; // ключ в данном случае = ID сессии
-        ArrayList<Service> services = new ArrayList<Service>();
+        Map<String, Service> services = new HashMap<String, Service>();
 
         ArrayList<ILimit> limits = new ArrayList<ILimit>();
 
@@ -48,8 +48,8 @@ public class Main
         context.addServlet(new ServletHolder(new AuthServlet(clients, sessions)), "/auth");
         context.addServlet(new ServletHolder(new ProfileServlet(sessions)), "/profile");
         context.addServlet(new ServletHolder(new AccountsServlet(sessions)), "/accounts");
-        context.addServlet(new ServletHolder(new PaymentsServlet(queuePayments, historyPayments, sessions)), "/payments");
-        context.addServlet(new ServletHolder(new LimitsServlet()), "/limits");
+        context.addServlet(new ServletHolder(new PaymentsServlet(queuePayments, historyPayments, services, sessions)), "/payments");
+        context.addServlet(new ServletHolder(new LimitsServlet(limits, services, sessions)), "/limits");
 
         ResourceHandler resource_handler = new ResourceHandler();
         resource_handler.setDirectoriesListed(false);
@@ -68,7 +68,7 @@ public class Main
     /*
     Создание локальных объектов для тестов
      */
-    private static void createTestData(Map<String, Client> clients, ArrayList<Service> services)
+    private static void createTestData(Map<String, Client> clients, Map<String, Service> services)
     {
         Random r = new Random();
 
@@ -89,13 +89,13 @@ public class Main
 
             Account acc = new Account("4081781000000000000"+id.toString(), client);
             acc.kt(r.nextDouble()*1000);
-            client.Accounts.add(acc);
+            client.Accounts.put(acc.Id.toString(), acc);
             acc = new Account("4081781000000000001"+id.toString(), client);
             acc.kt(r.nextDouble()*100);
-            client.Accounts.add(acc);
+            client.Accounts.put(acc.Id.toString(), acc);
             acc = new Account("4081781000000000002"+id.toString(), client);
             acc.kt(r.nextDouble()*1000);
-            client.Accounts.add(acc);
+            client.Accounts.put(acc.Id.toString(), acc);
 
             clients.put(client.Login, client);
 
@@ -103,7 +103,7 @@ public class Main
             Service service = new Service(name);
             service.Id = Sequence.getNextId();
 
-            services.add(service);
+            services.put(service.Id.toString(), service);
         }
     }
 }

@@ -14,7 +14,6 @@ import java.util.Map;
  */
 public final class LimitOfArrayPayments extends Limit implements ILimit
 {
-    private Service _service;
     private Map<String, Stat> _stat;
     private boolean _isPaymentsToOneClient;
 
@@ -44,6 +43,21 @@ public final class LimitOfArrayPayments extends Limit implements ILimit
         _isPaymentsToOneClient = isPaymentsToOneClient;
     }
 
+    public LimitOfArrayPayments(String description
+            , Double maxSumOfPayments, Integer maxNumberOfPayments
+            , Time beginTime, Time endTime
+            , Long interval
+            , Service service
+            , boolean isPaymentsToOneClient)
+    {
+        super(description, maxSumOfPayments, maxNumberOfPayments, beginTime, endTime);
+
+        _interval = interval;
+        _service = service;
+        _stat = new HashMap<String, Stat>();
+        _isPaymentsToOneClient = isPaymentsToOneClient;
+    }
+
     @Override
     public boolean checkPayment(Payment payment) {
         if (_service == null || _service == payment.Service) {
@@ -54,7 +68,8 @@ public final class LimitOfArrayPayments extends Limit implements ILimit
             if(_lastResetStat.compareTo(currentTime) < 0 && !isDateIncludedToInterval)
                 resetStat();
 
-            if (isDateIncludedToInterval || ((currentTime.getTime() - _lastResetStat.getTime()) <= getInterval())) {
+            if (isDateIncludedToInterval &&
+                    (getInterval().compareTo(0L) == 0 || (currentTime.getTime() - _lastResetStat.getTime()) <= getInterval())) {
                 String key;
                 if(_isPaymentsToOneClient){
                     key = payment.Account.Owner.Id.toString(); // в пользу одного клиента

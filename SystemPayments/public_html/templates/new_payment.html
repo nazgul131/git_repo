@@ -3,15 +3,27 @@
 <head>
     <link type="text/css" rel="stylesheet" href="/style.css" />
     <meta charset="windows-1251">
-    <title>SystemPayments: Accounts</title>
+    <title>SystemPayments: New payment</title>
 </head>
 <body>
     ${panel}
 
     <div class="control">
-        <a href="/payments?new=1">New payment</a>
-    </div>
+        <form action="/payments" method="post">
+            <label for="services_list">Service:</label>
+            ${services_list}
+            <br/>
 
-    ${payments}
+            <label for="accounts_list">Account:</label>
+            ${accounts_list}
+            <br/>
+
+            <label for="amount">Amount:</label>
+            <input id="amount" class="textbox" type="number" name="sum" value="0"/>
+            <br/>
+
+            <input type="submit" value="Pay" />
+        </form>
+    </div>
 </body>
 </html>

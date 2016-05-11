@@ -67,9 +67,7 @@ public class AuthServlet extends HttpServlet
         if (client != null) {
             if(client.IsOnline) {
                 pageVariables.put("message", "Already authorized!");
-            }
-
-            if (client.PsswHash.equals(pssw)) {
+            } else if (client.PsswHash.equals(pssw)) {
                 if(_sessions.containsKey(sessionId))
                     _sessions.remove(sessionId);
 

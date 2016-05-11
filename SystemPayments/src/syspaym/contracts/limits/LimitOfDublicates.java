@@ -14,7 +14,6 @@ import java.util.Map;
  */
 public final class LimitOfDublicates extends Limit implements ILimit
 {
-    private Service _service;
     private Map<String, Stat> _stat;
 
     public LimitOfDublicates(    String description
@@ -39,6 +38,19 @@ public final class LimitOfDublicates extends Limit implements ILimit
         _stat = new HashMap<String, Stat>();
     }
 
+    public LimitOfDublicates(    String description
+            , Double maxSumOfPayments
+            , Time beginTime, Time endTime
+            , Long interval
+            , Service service)
+    {
+        super(description, maxSumOfPayments, beginTime, endTime);
+
+        _interval = interval;
+        _service = service;
+        _stat = new HashMap<String, Stat>();
+    }
+
     @Override
     public boolean checkPayment(Payment payment) {
         if (_service == null || _service == payment.Service) {
@@ -49,7 +61,8 @@ public final class LimitOfDublicates extends Limit implements ILimit
             if(_lastResetStat.compareTo(currentTime) < 0 && !isDateIncludedToInterval)
                 resetStat();
 
-            if (isDateIncludedToInterval || ((currentTime.getTime() - _lastResetStat.getTime()) <= getInterval())) {
+            if (isDateIncludedToInterval &&
+                    (getInterval().compareTo(0L) == 0 || (currentTime.getTime() - _lastResetStat.getTime()) <= getInterval())) {
                 String key;
                 if (_service == null) {
                     key = payment.Service.Id.toString() + payment.Account.Owner.Id.toString();

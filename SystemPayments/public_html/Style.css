@@ -1,3 +1,16 @@
+label{
+    clear: left;
+    float: left;
+    width: 100px;
+    font-weight: bold;
+}
+
+.textbox {width: 200px;}
+
+#message{color: red}
+
+.control{padding: 20px;}
+
 #panel{
     position: relative;
     width: 98%;
@@ -61,4 +74,5 @@
 
 /*Данные*/
 .data{margin-top: 10px}
-table {border: #000 solid 1px;}
+table, td {border: #000 solid 1px; border-collapse: collapse}
+td {width: 200px}
